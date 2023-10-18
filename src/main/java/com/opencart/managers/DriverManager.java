@@ -2,6 +2,7 @@ package com.opencart.managers;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.Locale;
 
@@ -11,8 +12,12 @@ public class DriverManager {
     private WebDriver driver;
 
     private DriverManager(){
-        webDriverType.toUpperCase();
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("ignore-certificate-errors");
+       webDriverType.toUpperCase();
+
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
         System.out.println("The Chrome Driver is initialised. " + webDriverType.toUpperCase());
 
     }
