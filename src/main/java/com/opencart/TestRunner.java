@@ -56,11 +56,7 @@ public class TestRunner {
         System.out.println(password);
         //------
         JavascriptExecutor js = (JavascriptExecutor) driver;
-
-///problema???
-
         WebElement privacyPolicy1 = driver.findElement(By.xpath("//input[@name='agree']"));
-
         js.executeScript("arguments[0].scrollIntoView(true);", privacyPolicy1);
 
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
